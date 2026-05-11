@@ -1,0 +1,37 @@
+/*
+  Estilos base de la Semana 1: fondo oscuro, texto blanco, centrado
+  y tipografía sans-serif. CSS puro, sin frameworks externos.
+*/
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedor {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin: 0 0 0.5rem;
+  color: #dd0031;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 2rem;
+  color: #c0c0c0;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
