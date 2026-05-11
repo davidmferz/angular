@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+  Reset mínimo global para que el fondo oscuro del AppComponent
+  cubra toda la ventana del navegador.
+*/
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+}
