@@ -1,6 +1,6 @@
 /*
-  Estilos - Semana 2. Se mantiene la base oscura y centrada;
-  se agregan estilos para el panel del contador y los botones.
+  Estilos - Semana 3. Se conserva todo lo de la Semana 2 y se agregan
+  estilos para el grid de personas y el placeholder de @defer.
 */
 :host {
   display: block;
@@ -36,7 +36,8 @@ p {
   color: #e0e0e0;
 }
 
-.contador-panel {
+.contador-panel,
+.personas-panel {
   margin-top: 3rem;
   padding: 2rem;
   background-color: #1e1e1e;
@@ -44,7 +45,8 @@ p {
   border-radius: 12px;
 }
 
-.contador-panel h3 {
+.contador-panel h3,
+.personas-panel h3 {
   margin: 0 0 1rem;
   color: #ffffff;
 }
@@ -88,4 +90,21 @@ button:active {
   color: #7ee2b8;
   border-radius: 6px;
   font-weight: 600;
+}
+
+.separador-defer {
+  height: 60vh;
+}
+
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.placeholder {
+  margin: 1rem 0;
+  color: #888888;
+  font-style: italic;
 }

@@ -1,12 +1,19 @@
-// Componente raíz - Semana 2.
-// Se agrega reactividad con signals: contador (estado), doble (derivado)
-// y un effect() que reacciona a cambios. Los botones modifican el estado
-// con set() y update().
+// Componente raíz - Semana 3.
+// Mantiene la demo de signals de la Semana 2 y agrega una lista de
+// personas como signal<Persona[]> que se renderiza con @for usando
+// TarjetaComponent. La lista se carga de forma diferida con @defer.
 import { Component, computed, effect, signal } from '@angular/core';
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
+
+interface Persona {
+  nombre: string;
+  edad: number;
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [TarjetaComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -16,6 +23,14 @@ export class App {
 
   protected readonly contador = signal<number>(0);
   protected readonly doble = computed<number>(() => this.contador() * 2);
+
+  protected readonly personas = signal<Persona[]>([
+    { nombre: 'Lucía Ramírez', edad: 15 },
+    { nombre: 'Carlos Mendoza', edad: 27 },
+    { nombre: 'Ana Torres', edad: 42 },
+    { nombre: 'Pedro Salinas', edad: 65 },
+    { nombre: 'Mariana López', edad: 19 }
+  ]);
 
   constructor() {
     effect(() => {

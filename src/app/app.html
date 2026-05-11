@@ -1,7 +1,7 @@
 <!--
-  Plantilla raíz - Semana 2.
-  Muestra el contador y su valor derivado (doble), dos botones para
-  modificarlo y un @if que aparece solo cuando contador === 10.
+  Plantilla raíz - Semana 3.
+  Conserva la demo de signals y agrega un grid de tarjetas que se
+  renderiza con @for y se carga diferido con @defer (on viewport).
 -->
 <main class="contenedor">
   <h1>{{ titulo() }}</h1>
@@ -27,6 +27,27 @@
 
     @if (contador() === 10) {
       <p class="mensaje-meta">¡Llegaste a 10!</p>
+    }
+  </section>
+
+  <section class="personas-panel">
+    <h3>Personas</h3>
+
+    <div class="separador-defer"></div>
+
+    @defer (on viewport) {
+      <div class="grid-tarjetas">
+        @for (persona of personas(); track persona.nombre) {
+          <app-tarjeta
+            [nombre]="persona.nombre"
+            [edad]="persona.edad"
+          />
+        }
+      </div>
+    } @placeholder {
+      <p class="placeholder">Desplázate para cargar las tarjetas…</p>
+    } @loading (minimum 200ms) {
+      <p class="placeholder">Cargando tarjetas…</p>
     }
   </section>
 </main>
