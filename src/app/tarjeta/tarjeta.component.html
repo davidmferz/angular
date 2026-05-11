@@ -1,0 +1,21 @@
+<!--
+  Plantilla de TarjetaComponent.
+  Muestra los datos recibidos como inputs e imprime una etiqueta
+  diferente según la edad usando @switch.
+-->
+<article class="tarjeta">
+  <h4>{{ nombre() }}</h4>
+  <p class="edad">Edad: {{ edad() }} años</p>
+
+  @switch (true) {
+    @case (edad() < 18) {
+      <span class="etiqueta etiqueta-joven">Joven</span>
+    }
+    @case (edad() >= 18 && edad() <= 60) {
+      <span class="etiqueta etiqueta-adulto">Adulto</span>
+    }
+    @case (edad() > 60) {
+      <span class="etiqueta etiqueta-senior">Senior</span>
+    }
+  }
+</article>

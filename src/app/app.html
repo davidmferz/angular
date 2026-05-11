@@ -1,7 +1,7 @@
 <!--
-  Plantilla raíz de la Semana 1.
-  Muestra título (signal), subtítulo con el autor y una breve descripción
-  de qué es Angular. Sin lógica todavía: solo interpolación {{ }}.
+  Plantilla raíz - Semana 3.
+  Conserva la demo de signals y agrega un grid de tarjetas que se
+  renderiza con @for y se carga diferido con @defer (on viewport).
 -->
 <main class="contenedor">
   <h1>{{ titulo() }}</h1>
@@ -13,4 +13,41 @@
     usando TypeScript, componentes reutilizables y un sistema de
     reactividad moderno basado en <strong>Signals</strong>.
   </p>
+
+  <section class="contador-panel">
+    <h3>Demo de Signals</h3>
+
+    <p class="valor">Contador: <strong>{{ contador() }}</strong></p>
+    <p class="valor">Doble: <strong>{{ doble() }}</strong></p>
+
+    <div class="botones">
+      <button type="button" (click)="incrementar()">Incrementar</button>
+      <button type="button" (click)="decrementar()">Decrementar</button>
+    </div>
+
+    @if (contador() === 10) {
+      <p class="mensaje-meta">¡Llegaste a 10!</p>
+    }
+  </section>
+
+  <section class="personas-panel">
+    <h3>Personas</h3>
+
+    <div class="separador-defer"></div>
+
+    @defer (on viewport) {
+      <div class="grid-tarjetas">
+        @for (persona of personas(); track persona.nombre) {
+          <app-tarjeta
+            [nombre]="persona.nombre"
+            [edad]="persona.edad"
+          />
+        }
+      </div>
+    } @placeholder {
+      <p class="placeholder">Desplázate para cargar las tarjetas…</p>
+    } @loading (minimum 200ms) {
+      <p class="placeholder">Cargando tarjetas…</p>
+    }
+  </section>
 </main>
