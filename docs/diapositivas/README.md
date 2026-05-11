@@ -1,6 +1,6 @@
 # Diapositivas — Curso Angular 21
 
-Las diapositivas están escritas en **Markdown con front-matter de [Marp](https://marp.app/)**. Cada archivo corresponde a una semana del curso y contiene únicamente **tema** y **objetivo**; el código se muestra en vivo en Visual Studio Code desde el tag correspondiente del repositorio.
+Las diapositivas están escritas en **Markdown con front-matter de [Marp](https://marp.app/)**. Cada archivo corresponde a una semana del curso y contiene únicamente **tema** y **objetivo**; el código se muestra en vivo en Visual Studio Code desde la rama correspondiente del repositorio.
 
 ## Cómo presentar
 
@@ -34,7 +34,7 @@ git checkout claude/angular-course-code-generation-QStVy
 
 ## Coherencia diapositiva ↔ código
 
-| Diapositiva                    | Archivos clave en el repo                                    | Tag git    |
+| Diapositiva                    | Archivos clave en el repo                                    | Rama git   |
 | ------------------------------ | ------------------------------------------------------------ | ---------- |
 | Semana 1 — primer componente   | `src/app/app.ts`, `app.html`, `app.css`                      | `semana1`  |
 | Semana 2 — signals y reactividad | + contador / doble / effect en los mismos archivos          | `semana2`  |
